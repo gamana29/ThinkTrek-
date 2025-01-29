@@ -1,0 +1,128 @@
+/* General Reset and Box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Basic Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Centered Container for Certification Guide */
+.certification-guide-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #ccc; /* Border around the whole container */
+    max-width: 1000px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Heading Styles */
+.certification-guide-container h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Paragraph Styling */
+.certification-guide-container p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* List Styling */
+.certification-guide-container ul {
+    list-style-type: square;
+    padding-left: 30px;
+    text-align: left;
+}
+
+/* List Item Styling */
+.certification-guide-container ul li {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+/* Department Links Section */
+.department-links {
+    margin-top: 30px;
+}
+
+/* Button Styling */
+.department-links button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+/* Button Hover Effect */
+.department-links button:hover {
+    background-color: #45a049;
+}
+
+/* Make the page responsive */
+@media screen and (max-width: 768px) {
+    .certification-guide-container {
+        padding: 15px;
+    }
+
+    .certification-guide-container h2 {
+        font-size: 2rem;
+    }
+
+    .department-links button {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+}
+
+/* Styling for the Top Navigation Bar */
+.top-nav {
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.top-nav button {
+    color: white;
+    background-color: #333;
+    border: 1px solid #ddd;
+    padding: 12px 20px;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.top-nav button:hover {
+    background-color: #555;
+}

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light grey background */
+        }
+
+        /* Navigation Bar */
+        .top-nav {
+            background-color: #607D8B; /* Muted blue-grey */
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        .top-nav button {
+            background: #607D8B; /* Muted blue-grey */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+
+        .top-nav button:hover {
+            background: #455A64; /* Darker blue-grey */
+        }
+
+        /* Dashboard Container */
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Welcome Section */
+        .welcome-message {
+            text-align: center;
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .welcome-message .icon {
+            font-size: 50px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .welcome-message h2 {
+            font-size: 30px;
+            color: #333;
+        }
+
+        .welcome-message p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Card Section */
+        .card {
+            text-align: center;
+            background: #FFEB3B; /* Soft Yellow */
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            margin: 0;
+            color: #333;
+            font-size: 20px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* Streak Section */
+        #day-wise-streak {
+            margin-top: 20px;
+            background: #E3F2FD; /* Light blue background */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #day-wise-streak h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+            font-size: 20px;
+        }
+
+        #day-wise-streak p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        /* Quiz Section */
+        .quiz-container {
+            margin-top: 20px;
+            background: #FFF3E0; /* Soft peach background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center align the content */
+            justify-content: center; /* Center align the content vertically */
+        }
+
+        .quiz-container h3 {
+            text-align: center;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .quiz-container #question {
+            margin: 20px 0;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .quiz-container .options-container button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background: #64B5F6; /* Light blue */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .quiz-container .options-container button:hover {
+            background: #42A5F5; /* Darker blue */
+        }
+
+        .quiz-container #result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 16px;
+            color: green;
+        }
+
+        /* Knowledge Check Button */
+        .knowledge-check-btn,
+        .brain-exercise-btn,
+        .study-resources-btn,
+        .logout-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 30px;
+            background-color: #4CAF50; /* Green */
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+            margin: 10px 0; /* Add some space between buttons */
+        }
+
+        .knowledge-check-btn:hover,
+        .brain-exercise-btn:hover,
+        .study-resources-btn:hover,
+        .logout-btn:hover {
+            background-color: #388E3C; /* Darker green */
+            transform: scale(1.05);
+        }
+
+        .knowledge-check-btn i,
+        .brain-exercise-btn i,
+        .study-resources-btn i,
+        .logout-btn i {
+            margin-right: 10px;
+        }
+
+        /* Chatbot Styles */
+        #chatbot-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1000;
+            padding: 10px;
+        }
+
+        #chatbot-popup .chat-header {
+            font-weight: bold;
+            color: #333;
+            padding: 10px;
+            background-color: #607D8B;
+            color: white;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+
+        #chatbot-popup .chat-body {
+            height: 300px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 0 0 8px 8px;
+        }
+
+        #chatbot-popup .chat-input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        #chatbot-popup .chat-button {
+            padding: 10px;
+            background-color: #607D8B;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        #chatbot-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #607D8B;
+            color: white;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <div class="top-nav">
+        <button onclick="window.location.href='dashboard.html'">Dashboard</button>
+        <button onclick="window.location.href='login.html'">Login</button>
+        <button onclick="window.location.href='signup.html'">Sign Up</button>
+        <button onclick="window.location.href='streak.html'">Streak</button>
+        <button onclick="window.location.href='certification-guide.html'">Certification Courses Guide</button>
+        <button onclick="window.location.href='quiz.html'">Take Quiz</button>
+        <!-- Study Resources Button -->
+        <button onclick="window.location.href='study-resources.html'">Study Resources</button>
+        <!-- Logout Button -->
+        <button onclick="window.location.href='login.html'" class="logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+        </button>
+    </div>
+
+    <!-- Dashboard Content Container -->
+    <div class="dashboard-container">
+        <!-- Welcome Message -->
+        <div class="welcome-message">
+            <h2>
+                <span class="icon"><i class="fas fa-book-reader"></i></span>
+                Welcome to Your Dashboard,Username!
+                <span class="icon"><i class="fas fa-laptop-code"></i></span>
+            </h2>
+            <p>Here, you can view your progress, learning streak, and more. Keep going strong!</p>
+        </div>
+        
+        <!-- Stats Overview Card (Learning Streak) -->
+        <div class="card">
+            <h3>Learning Streak 🔥</h3>
+            <p id="streak">Loading your streak...</p>
+        </div>
+
+        <!-- Day-wise Streak Display -->
+        <div id="day-wise-streak">
+            <h3>Your Day-Wise Streak:</h3>
+            <div class="streak-day">
+                <p>Day 1: 20 Minutes</p>
+                <p>Day 2: 35 Minutes</p>
+                <p>Day 3: 50 Minutes</p>
+            </div>
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="quiz-container">
+            <h3>Challenge Your Mind</h3>
+            <!-- Knowledge Check Button -->
+            <button onclick="window.location.href='quiz2.html'" class="knowledge-check-btn">
+                <i class="fas fa-check-circle"></i> Knowledge Check
+            </button>
+
+            <!-- Brain Exercise Button -->
+            <button onclick="window.location.href='quiz2.html'" class="brain-exercise-btn">
+                <i class="fas fa-brain"></i> Brain Exercise
+            </button>
+
+            <!-- Study Resources Button in the Dashboard -->
+            <button onclick="window.location.href='study-resources.html'" class="study-resources-btn">
+                <i class="fas fa-book"></i> Study Resources
+            </button>
+
+            <div id="options" class="options-container">
+                <!-- Quiz options will be dynamically generated -->
+            </div>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <!-- Chatbot Button -->
+    <button id="chatbot-button" onclick="toggleChatbot()">💬</button>
+
+    <!-- Chatbot Popup -->
+    <div id="chatbot-popup">
+        <div class="chat-header">Chat with us!</div>
+        <div class="chat-body" id="chat-body">
+            <p>Hi there! How can I assist you today?</p>
+        </div>
+        <input type="text" id="chat-input" class="chat-input" placeholder="Type your message...">
+        <button class="chat-button" onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        // Function to toggle chatbot visibility
+        function toggleChatbot() {
+            const chatbot = document.getElementById("chatbot-popup");
+            if (chatbot.style.display === "block") {
+                chatbot.style.display = "none";
+            } else {
+                chatbot.style.display = "block";
+            }
+        }
+
+        // Send a message to chatbot
+        function sendMessage() {
+            const input = document.getElementById("chat-input");
+            const chatBody = document.getElementById("chat-body");
+
+            const userMessage = input.value.trim();
+            if (userMessage === "") return;
+
+            // Add user message to chat
+            chatBody.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
+            input.value = "";
+
+            // Simulate a chatbot response (you can replace this with real API integration)
+            setTimeout(() => {
+                chatBody.innerHTML += `<p><strong>Chatbot:</strong> I'm here to assist you. How can I help?</p>`;
+                chatBody.scrollTop = chatBody.scrollHeight; // Scroll to the latest message
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
