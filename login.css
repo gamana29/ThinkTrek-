@@ -36,7 +36,7 @@ body::before {
 #title h1 {
     font-size: 48px;
     font-weight: bold;
-    color: #ffffff;
+    color: #383737;
     margin-bottom: 10px;
 }
 
@@ -62,7 +62,7 @@ body::before {
 h2 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #4caf50;
+    color: #0a0a0a;
 }
 
 form {
@@ -89,13 +89,13 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #4caf50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+    border-color: #080808;
+    box-shadow: 0 0 5px rgba(21, 22, 21, 0.5);
 }
 
 /* Button */
 button {
-    background-color: #4caf50;
+    background-color: #070807;
     color: #fff;
     padding: 10px 20px;
     font-size: 16px;
@@ -106,7 +106,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #131313;
 }
 
 /* Sign-Up Link */
@@ -116,7 +116,7 @@ button:hover {
 }
 
 .signup-link a {
-    color: #4caf50;
+    color: #0d0d0d;
     text-decoration: none;
 }
 

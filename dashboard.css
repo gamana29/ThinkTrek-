@@ -1,7 +1,7 @@
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f3f4f7;
+    background-color: #e8f0fe; /* Light blue background */
     margin: 0;
     padding: 0;
     display: flex;
@@ -34,7 +34,7 @@ body {
 
 .button-section .btn {
     padding: 12px 20px;
-    background-color: #4caf50;
+    background-color: #007bff; /* Blue button */
     color: white;
     font-size: 16px;
     border: none;
@@ -45,7 +45,7 @@ body {
 }
 
 .button-section .btn:hover {
-    background-color: #45a049;
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 /* Main Content Section */
@@ -79,7 +79,7 @@ header h1 {
 
 /* Card */
 .card {
-    background-color: #e7f7e7;
+    background-color: #cfe2ff; /* Light blue card background */
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -107,7 +107,7 @@ footer {
 
 footer .btn {
     padding: 12px 25px;
-    background-color: #0c0e0c;
+    background-color: #28a745; /* Green button */
     color: white;
     font-size: 18px;
     border: none;
@@ -117,7 +117,7 @@ footer .btn {
 }
 
 footer .btn:hover {
-    background-color: #151815;
+    background-color: #218838; /* Darker green on hover */
 }
 
 /* Responsive Design */
@@ -157,7 +157,7 @@ footer .btn:hover {
     display: inline-flex;
     align-items: center;
     padding: 12px 30px;
-    background-color: #101110;
+    background-color: #6c757d; /* Gray for knowledge check */
     color: white;
     border: none;
     border-radius: 50px;
@@ -169,7 +169,7 @@ footer .btn:hover {
 }
 
 .knowledge-check-btn:hover {
-    background-color: #181a18;
+    background-color: #5a6268; /* Darker gray on hover */
     transform: scale(1.05);
 }
 
@@ -179,9 +179,9 @@ footer .btn:hover {
 
 /* Optional: Additional style for Brain Exercise button */
 .brain-exercise-btn {
-    background-color: #ff9800;  /* Orange for Brain Exercise */
+    background-color: #f39c12;  /* Yellow-orange for Brain Exercise */
 }
 
 .brain-exercise-btn:hover {
-    background-color: #fb8c00; /* Darker orange on hover */
+    background-color: #e67e22; /* Darker orange on hover */
 }

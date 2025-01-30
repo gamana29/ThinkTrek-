@@ -9,7 +9,7 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4; /* Light grey background */
+            background-color: #e2dede; /* Light grey background */
         }
 
         /* Navigation Bar */
@@ -76,7 +76,7 @@
         /* Card Section */
         .card {
             text-align: center;
-            background: #FFEB3B; /* Soft Yellow */
+            background: #b4b3b088; /* Soft Yellow */
             padding: 20px;
             margin: 10px 0;
             border-radius: 8px;
@@ -161,7 +161,7 @@
             margin-top: 20px;
             text-align: center;
             font-size: 16px;
-            color: green;
+            color: rgba(123, 128, 123, 0.477);
         }
 
         /* Knowledge Check Button */
@@ -172,7 +172,7 @@
             display: inline-flex;
             align-items: center;
             padding: 12px 30px;
-            background-color: #4CAF50; /* Green */
+            background-color: #6e7c6f; /* Green */
             color: white;
             border: none;
             border-radius: 50px;
@@ -188,7 +188,7 @@
         .brain-exercise-btn:hover,
         .study-resources-btn:hover,
         .logout-btn:hover {
-            background-color: #388E3C; /* Darker green */
+            background-color: #667a67; /* Darker green */
             transform: scale(1.05);
         }
 
@@ -345,6 +345,9 @@
         <input type="text" id="chat-input" class="chat-input" placeholder="Type your message...">
         <button class="chat-button" onclick="sendMessage()">Send</button>
     </div>
+
+    <button id="chatbot-button" onclick="toggleChatbot()">💬</button>
+
 
     <script>
         // Function to toggle chatbot visibility
