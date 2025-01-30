@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThinkTrek+</title>
-    <title>Login</title>
     <!-- Link to CSS File for Login -->
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="style.css">
@@ -26,8 +25,44 @@
         </form>
     </div>
 
+    <!-- Quiz Data Section -->
+    <div class="quiz-container" id="quiz-container" style="display:none;">
+        <h2>Quiz Data</h2>
+        <pre id="quiz-data"></pre>
+    </div>
+
     <!-- Link to Login JavaScript File -->
     <script src="login.js"></script>
     <script src="script.js"></script>
+
+    <!-- JavaScript to Fetch Quiz Data and Toggle Display -->
+    <script>
+        // Fetch the quiz data from the backend API after successful login
+        document.getElementById('login-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get login credentials (just an example; you should add real validation here)
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Perform a simple check (you can replace this with your actual authentication logic)
+            if (username === 'admin' && password === 'password') {
+                // If login is successful, fetch quiz data from the API
+                fetch('/api/quiz')
+                    .then(response => response.json())
+                    .then(data => {
+                        // Display quiz data
+                        document.getElementById('quiz-data').textContent = JSON.stringify(data, null, 2);
+                        document.querySelector('.login-container').style.display = 'none';
+                        document.querySelector('.quiz-container').style.display = 'block';
+                    })
+                    .catch(error => {
+                        console.error('Error fetching quiz data:', error);
+                    });
+            } else {
+                alert('Invalid credentials');
+            }
+        });
+    </script>
 </body>
 </html>

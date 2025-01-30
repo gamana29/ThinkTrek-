@@ -1,38 +1,36 @@
+// Import required packages
 const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
+const fetch = require('node-fetch');
+require('dotenv').config(); // This loads the environment variables from the .env file
 
 const app = express();
 const port = 3000;
 
-// Middleware
-app.use(cors());
-app.use(bodyParser.json());
+// Retrieve the API key from environment variables
+const API_KEY = process.env.API_KEY;
 
-// Simple chatbot logic
-const getBotResponse = (userMessage) => {
-  // Define simple responses based on user input
-  if (userMessage.toLowerCase().includes('hello')) {
-    return "Hello! How can I assist you today?";
-  } else if (userMessage.toLowerCase().includes('quiz')) {
-    return "I see you're interested in quizzes! You can take the quiz of the day above!";
-  } else {
-    return "I'm sorry, I didn't quite understand that. Can you rephrase?";
-  }
-};
+// Route to fetch quiz data (replace with your actual API URL)
+app.get('/api/quiz', async (req, res) => {
+    try {
+        // Make an API call using the API key
+        const response = await fetch(`https://api.example.com/getQuiz?apiKey=${API_KEY}`);
 
-// Endpoint for sending messages
-app.post('/chat', (req, res) => {
-  const { message } = req.body;
+        // Check if the response is successful
+        if (!response.ok) {
+            throw new Error('Failed to fetch quiz data');
+        }
 
-  // Get chatbot's response
-  const botResponse = getBotResponse(message);
+        // Parse and return the JSON data from the API
+        const data = await response.json();
+        res.json(data);
 
-  // Send response back to frontend
-  res.json({ response: botResponse });
+    } catch (error) {
+        // Handle errors and send an error response
+        res.status(500).json({ error: error.message });
+    }
 });
 
 // Start the server
 app.listen(port, () => {
-  console.log(`Chatbot server running at http://localhost:${port}`);
+    console.log(`Server is running on http://localhost:${port}`);
 });
