@@ -1,1 +1,0 @@
-alert("Welcome back,Ready to learn today?")
