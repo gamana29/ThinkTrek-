@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <!-- Link to external CSS files -->
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>ThinkTrek+ Quiz</h1>
+    </header>
+
+    <!-- Quiz Content -->
+    <div class="quiz-container">
+        <h2>Test Your Coding & DSA Knowledge!</h2>
+
+        <!-- Quiz Questions -->
+        <form id="quiz-form">
+            <div class="question">
+                <p>1. What is the time complexity of binary search?</p>
+                <label><input type="radio" name="q1" value="O(n)"> O(n)</label><br>
+                <label><input type="radio" name="q1" value="O(log n)"> O(log n)</label><br>
+                <label><input type="radio" name="q1" value="O(n^2)"> O(n^2)</label><br>
+            </div>
+
+            <div class="question">
+                <p>2. Which data structure is used for implementing a priority queue?</p>
+                <label><input type="radio" name="q2" value="Array"> Array</label><br>
+                <label><input type="radio" name="q2" value="Heap"> Heap</label><br>
+                <label><input type="radio" name="q2" value="Linked List"> Linked List</label><br>
+            </div>
+
+            <div class="question">
+                <p>3. What does 'O(n^2)' represent in time complexity?</p>
+                <label><input type="radio" name="q3" value="Linear Time"> Linear Time</label><br>
+                <label><input type="radio" name="q3" value="Quadratic Time"> Quadratic Time</label><br>
+                <label><input type="radio" name="q3" value="Exponential Time"> Exponential Time</label><br>
+            </div>
+
+            <button type="submit">Submit Quiz</button>
+        </form>
+    </div>
+
+    <!-- Link to external JavaScript -->
+    <script src="quiz.js"></script>
+</body>
+</html>

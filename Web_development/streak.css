@@ -1,0 +1,141 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f7; /* Light background color */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container to center the content */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #ffffff; /* White background for the container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Header Section */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+header p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Streak Section */
+.streak-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Make sure items wrap on small screens */
+}
+
+/* Streak Box */
+.streak-box {
+    flex: 1;
+    background-color: #e7f7e7;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 250px; /* Ensures the box doesn't get too small on narrow screens */
+    margin-bottom: 20px;
+}
+
+.streak-box h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+.streak-count {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4caf50;
+}
+
+/* Progress Box */
+.progress-box {
+    flex: 1;
+    background-color: #f7f7f7;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 250px; /* Ensures the box doesn't get too small on narrow screens */
+    margin-bottom: 20px;
+}
+
+.progress-box h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.progress-bar {
+    height: 20px;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4caf50;
+    border-radius: 10px;
+}
+
+.progress-text {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Button Styling */
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer .btn {
+    padding: 12px 25px;
+    background-color: #4caf50;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+footer .btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .streak-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .streak-box, .progress-box {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

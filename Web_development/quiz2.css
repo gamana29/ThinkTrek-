@@ -1,0 +1,160 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Navigation Bar */
+.top-nav {
+    background-color: #abaaaa;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.top-nav button {
+    background: #8b8585;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.top-nav button:hover {
+    background: #757575;
+}
+
+/* Quiz Container */
+.quiz-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.quiz-container h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Category Buttons */
+.category-buttons {
+    margin-top: 20px;
+}
+
+.category-buttons button {
+    background-color: #64b5f6;
+    color: white;
+    padding: 12px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 30%;
+    transition: background 0.3s ease;
+}
+
+.category-buttons button:hover {
+    background-color: #42a5f5;
+}
+
+/* Brain Exercise Button */
+.brain-exercise-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 30px;
+    background-color: #948c89; /* A vibrant color */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    margin-left: 15px; /* Space between Knowledge Check and Brain Exercise */
+}
+
+.brain-exercise-btn:hover {
+    background-color: #f4511e; /* Slightly darker shade */
+    transform: scale(1.05); /* Slightly enlarge the button */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a larger shadow effect */
+}
+
+.brain-exercise-btn i {
+    margin-right: 10px; /* Space between the icon and text */
+}
+
+/* Add a bounce animation on hover */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.brain-exercise-btn:hover {
+    animation: bounce 0.5s ease-in-out;
+}
+
+/* Quiz Content */
+#quiz-content p {
+    font-size: 18px;
+    color: #555;
+}
+
+#quiz-question-container {
+    margin-top: 20px;
+}
+
+#quiz-options button {
+    background-color: #64b5f6;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;
+    transition: background 0.3s ease;
+}
+
+#quiz-options button:hover {
+    background-color: #42a5f5;
+}
+
+/* Submit Button */
+.submit-btn {
+    background-color: #4caf50;
+    padding: 12px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 80%;
+}
+
+.submit-btn:hover {
+    background-color: #45a049;
+}
+
+/* Result Container */
+#quiz-result-container {
+    text-align: center;
+    padding: 20px;
+    background: #d4edda;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+#quiz-result-container p {
+    font-size: 18px;
+    color: #28a745;
+}
